@@ -1,7 +1,7 @@
 const addItem = (item) => {
     const li = document.createElement('li');
     const span = document.createElement('span');
-    span.textContent = item;
+    span.textContent = formatItem(item);
     span.classList.add('item-text');
     const button = document.createElement('button');
     button.textContent = '\u{2715}';
@@ -28,6 +28,11 @@ const deleteAllItems = () => {
     const grocery_list = document.getElementById('grocery-list');
     grocery_list.replaceChildren();
     setGroceryListVisibility();
+};
+
+const formatItem = (item) => {
+    item = item.trim();
+    return item.charAt(0).toUpperCase() + item.slice(1);
 };
 
 const submitForm = (event) => {
