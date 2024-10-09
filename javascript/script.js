@@ -1,7 +1,7 @@
 const addItem = (item) => {
     const li = document.createElement('li');
     const span = document.createElement('span');
-    span.textContent = item;
+    span.textContent = formatItem(item);
     span.classList.add('item-text');
     const button = document.createElement('button');
     button.textContent = '\u{2715}';
@@ -13,7 +13,7 @@ const addItem = (item) => {
         'click',
         function () {
             li.remove();
-            setGroceryListVisibility();
+            toggleListVisibility();
         },
         { once: true }
     );
@@ -24,26 +24,31 @@ const addItem = (item) => {
     grocery_list.appendChild(li);
 };
 
-const deleteAllItems = () => {
+const clearItems = () => {
     const grocery_list = document.getElementById('grocery-list');
     grocery_list.replaceChildren();
-    setGroceryListVisibility();
+    toggleListVisibility();
 };
 
-const submitForm = (event) => {
+const formatItem = (item) => {
+    item = item.trim();
+    return item.charAt(0).toUpperCase() + item.slice(1);
+};
+
+const submitItem = (event) => {
     event.preventDefault();
-    const form = event.target;
+    const itemForm = event.target;
     const item = form['item'];
     if (item.value) {
         addItem(item.value);
-        setGroceryListVisibility();
-        form.reset();
+        toggleListVisibility();
+        itemForm.reset();
     } else {
         alert('item required');
     }
 };
 
-const setGroceryListVisibility = () => {
+const toggleListVisibility = () => {
     if (grocery_list.querySelectorAll('li').length === 0) {
         grocery_list_section.classList.add('hide');
         emptyList.classList.remove('hide');
@@ -56,10 +61,10 @@ const setGroceryListVisibility = () => {
 const grocery_list_section = document.getElementById('grocery-list-section');
 const grocery_list = document.getElementById('grocery-list');
 const emptyList = document.getElementById('empty-list');
-const deleteAll = document.getElementById('delete-all');
-const addItemForm = document.getElementById('add-item-form');
+const clearList = document.getElementById('clear');
+const itemForm = document.getElementById('item-form');
 
-deleteAll.addEventListener('click', deleteAllItems);
-addItemForm.addEventListener('submit', submitForm);
+clearList.addEventListener('click', clearItems);
+itemForm.addEventListener('submit', submitItem);
 
-setGroceryListVisibility();
+toggleListVisibility();
