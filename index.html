@@ -8,6 +8,9 @@
         <link
             rel="stylesheet"
             href="css/style.css" />
+        <script
+            src="javascript/script.js"
+            defer></script>
         <title>My Grocery List Manager</title>
     </head>
     <body>
@@ -22,55 +25,38 @@
             <h1>My Grocery List Manager</h1>
         </header>
         <main>
-            <section class="empty-section">
+            <section
+                id="empty-list"
+                class="empty-section hide">
                 <p>Nothing to see here&hellip;</p>
             </section>
-            <section class="grocery-section">
+            <section
+                id="grocery-list-section"
+                class="grocery-section">
                 <h2>Grocery List</h2>
-                <ol>
-                    <li>
-                        Bacon
-                        <button class="delete">X</button>
-                    </li>
-                    <li>
-                        Eggs
-                        <button class="delete">X</button>
-                    </li>
-                    <li>
-                        Sausage
-                        <button class="delete">X</button>
-                    </li>
-                    <li>
-                        Cheese
-                        <button class="delete">X</button>
-                    </li>
-                    <li>
-                        Butter
-                        <button class="delete">X</button>
-                    </li>
-                    <li>
-                        Onion
-                        <button class="delete">X</button>
-                    </li>
-                    <li>
-                        Frank's RedHot
-                        <button class="delete">X</button>
-                    </li>
-                </ol>
-                <button class="clear">Clear all items</button>
+                <ol
+                    id="grocery-list"
+                    class="grocery-list"></ol>
+                <button
+                    id="delete-all"
+                    class="clear"
+                    type="button"
+                    aria-label="remove all items">
+                    Clear All Items
+                </button>
             </section>
             <section class="add-item-section">
                 <h2>Add New Item</h2>
-                <form>
+                <form id="add-item-form">
                     <div class="row">
                         <input
                             type="text"
-                            name="newItem"
-                            id="newItem"
+                            name="item"
                             placeholder="Item&hellip;"
                             required />
                         <input
                             type="submit"
+                            aria-label="add item"
                             value="Add" />
                     </div>
                 </form>

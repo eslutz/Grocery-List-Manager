@@ -87,6 +87,7 @@ section {
                 font-size: 1.3rem;
                 height: 2rem;
                 width: 2rem;
+                margin-left: calc(var(--spacing) / 2);
             }
         }
 
@@ -133,6 +134,10 @@ footer {
     & p {
         margin: var(--spacing);
     }
+}
+
+.hide {
+    display: none;
 }
 
 .row {
