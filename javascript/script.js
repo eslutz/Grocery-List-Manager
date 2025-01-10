@@ -38,7 +38,7 @@ const formatItem = (item) => {
 const submitItem = (event) => {
     event.preventDefault();
     const itemForm = event.target;
-    const item = form['item'];
+    const item = itemForm['item'];
     if (item.value) {
         addItem(item.value);
         toggleListVisibility();
