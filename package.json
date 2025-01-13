@@ -1,0 +1,46 @@
+{
+    "name": "grocery-list-manager",
+    "version": "2.0.0",
+    "description": "Grocery List Manager allows users to add, view, and remove items from their grocery list.",
+    "keywords": [
+        "react",
+        "javascript",
+        "grocery list"
+    ],
+    "author": "Eric Slutz",
+    "homepage": "https://eslutz.github.io/Grocery-List-Manager",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eslutz/Grocery-List-Manager.git"
+    },
+    "bugs": {
+        "url": "https://github.com/eslutz/Grocery-List-Manager/issues"
+    },
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist"
+    },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.17.0",
+        "@types/react": "^18.3.18",
+        "@types/react-dom": "^18.3.5",
+        "@vitejs/plugin-react": "^4.3.4",
+        "eslint": "^9.17.0",
+        "eslint-plugin-react": "^7.37.2",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "eslint-plugin-react-refresh": "^0.4.16",
+        "gh-pages": "^6.3.0",
+        "globals": "^15.14.0",
+        "vite": "^6.0.5"
+    }
+}
